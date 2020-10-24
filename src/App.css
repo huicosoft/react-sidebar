@@ -1,0 +1,158 @@
+html, body, #root, .App {
+  height: 100%;
+}
+
+.App{
+  display: flex;
+}
+.sibebar-container{
+  width: 250px;
+  height: 100%;
+  color: #FFF;
+  background: rgb(2,0,36);
+  background: linear-gradient(343deg, rgba(2,0,36,1) 0%, rgba(83,140,238,1) 0%, rgba(110,97,218,1) 100%);
+  display: flex;
+  flex-direction: column;
+}
+/* Estilos de la parte Header del componente Menu */
+.sidebar-header{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFF;
+}
+
+.sidebar-header .user-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+.sidebar-header .user-name {
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+}
+.sidebar-header .user-rol {
+  margin: 0;
+}
+
+.sidebar-header .user-img  img{
+  width: 100%;
+  height: 100%;
+}
+
+/* Estilos del Footer del Menu */
+
+.sidebar-footer {
+    bottom: 0;
+    width: 240px;
+    margin-left: 5px;
+    height: 40px;
+    color: white;
+    border-top: 3px solid rgb(0 0 0 / 16%);
+    padding-top: 0.5rem;
+    text-align: center;
+}
+.sidebar-footer a {
+  text-emphasis: none;
+  text-decoration: none;
+  font-weight: 400;
+  color: #FFF;
+}
+/* Estilos Content del Menu */
+
+.sidebar-content {
+    flex:auto;
+    padding: 0.5rem 1.5rem;
+}
+
+/* Estilos Al componente Menu Item */
+
+.menu-item-container {
+  background-color: #0000004f;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.menu-item-container:hover {
+  cursor: pointer;
+  background: #000;
+  padding: 0.8rem;
+  transition: 100ms;
+}
+.menu-item-container.active {
+  cursor: pointer;
+  background: #000;
+  padding: 0.8rem;
+  transition: 100ms;
+}
+ 
+
+/* Estilos del Header  */
+.layout-header {
+  height: 50px;
+  flex: auto;
+}
+
+.layout-header .menu-button{
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-button:focus {
+  border: none;
+  outline: none;
+}
+
+/* Manejo del Menu */
+
+.hide-menu .sibebar-container {
+  position: absolute;
+  left: -250px;
+  animation-name: hideMenu;
+  animation-duration: 350ms;
+}
+.hide-menu .layout-container {
+  position: absolute;
+  left: 0px;
+  animation-name: hideMenuLayout;
+  animation-duration: 350ms;
+}
+
+.show-menu .sibebar-container {
+  position: absolute;
+  left: 0px;
+  animation-name: showMenu;
+  animation-duration: 350ms;
+}
+.show-menu .layout-container {
+  position: absolute;
+  left: 250px;
+  animation-name: showMenuLayout;
+  animation-duration: 350ms;
+}
+
+@keyframes hideMenu {
+  from {left: 0;}
+  to {left: -250px;}
+}
+@keyframes hideMenuLayout {
+  from {left: 250px;}
+  to {left: 0px;}
+}
+@keyframes showMenu {
+  from {left: -250px;}
+  to {left: 0px;}
+}
+@keyframes showMenuLayout {
+  from {left: 0px;}
+  to {left: 250px;}
+}
